@@ -1,3 +1,19 @@
-function selectionSort() {}
+function selectionSort() {
+	const swap = (arr, idx1, idx2) => ([ arr[idx1], arr[idx2] ] = [ arr[idx2], arr[idx1] ]);
 
-module.exports = selectionSort;
+	for (let i = 0; i < arr.length; i++) {
+		let lowest = i;
+
+		for (let j = i + 1; j < arr.length; j++) {
+			if (arr[lowest] > arr[j]) {
+				lowest = j;
+			}
+		}
+
+		if (i !== lowest) swap(arr, i, lowest);
+	}
+
+	return arr;
+}
+//pythontutor.com/visualize.html#mode=display
+https: module.exports = selectionSort;
